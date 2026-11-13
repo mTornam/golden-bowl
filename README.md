@@ -1,33 +1,30 @@
 # Golden Bowl 🍜
 
-A responsive restaurant website built with React and Vite. Explore the restaurant, browse its menu, view the gallery, and find the reservation form.
+Golden Bowl is a React + Vite restaurant landing page for a modern dining brand. The app includes a marketing-style homepage, menu browsing, gallery, and reservation form, and is designed as a responsive single-page experience.
 
-**Live site:** [gbres.netlify.app](https://gbres.netlify.app)
+**Live demo:** [gbres.netlify.app](https://gbres.netlify.app)
 
-## Features
+## Stack
 
-- Restaurant landing page with hero, introduction, and about sections
-- Menu and menu-category views
-- Photo gallery
-- Reservation form interface
-- Responsive layout
+- React 19
+- Vite 7
+- Tailwind CSS 4
+- React Router 7
+- Font Awesome
+- ESLint
 
-## Tech stack
+## Project overview
 
-- [React 19](https://react.dev/)
-- [Vite 7](https://vite.dev/)
-- [Tailwind CSS 4](https://tailwindcss.com/) and CSS
-- [React Router 7](https://reactrouter.com/)
-- [Font Awesome](https://fontawesome.com/)
+The app is organized as a front-end landing page with reusable section components and data-driven menu rendering. It uses a component-based structure to keep content modular and easy to extend.
 
-## Run locally
+## Getting started
 
-### Requirements
+### Prerequisites
 
-- Node.js
+- Node.js 18+
 - npm or pnpm
 
-### Install dependencies
+### Install
 
 ```bash
 git clone https://github.com/mTornam/golden-bowl.git
@@ -35,31 +32,77 @@ cd golden-bowl
 npm install
 ```
 
-### Start the development server
+### Run locally
 
 ```bash
 npm run dev
 ```
 
-Open the local URL printed by Vite (usually `http://localhost:5173`).
+The Vite dev server will print a local URL, typically:
 
-## Available scripts
+```text
+http://localhost:5173
+```
+
+### Production build
+
+```bash
+npm run build
+```
+
+Generate a production bundle in the `dist/` directory.
+
+### Preview production build
+
+```bash
+npm run preview
+```
+
+### Linting
+
+```bash
+npm run lint
+```
+
+## Scripts
 
 | Command | Description |
 | --- | --- |
-| `npm run dev` | Start the Vite development server |
-| `npm run build` | Create a production build in `dist/` |
-| `npm run preview` | Preview the production build locally |
-| `npm run lint` | Run ESLint |
+| `npm run dev` | Start the Vite dev server |
+| `npm run build` | Build the app for production |
+| `npm run preview` | Serve the production build locally |
+| `npm run lint` | Run ESLint on the project |
 
-## Project structure
+## Structure
 
 ```text
-src/
-├── components/
-│   ├── Menu/          # Menu data and menu components
-│   ├── Reservations/  # Reservation form
-│   └── sections/      # Landing-page sections
-├── App.jsx
-└── main.jsx
+golden-bowl/
+├── public/                 # Static assets
+├── src/
+│   ├── components/
+│   │   ├── Menu/           # Menu categories, items, and data
+│   │   ├── Reservations/   # Reservation form logic and UI
+│   │   └── sections/       # Landing page sections
+│   ├── App.jsx
+│   ├── main.jsx
+│   ├── App.css
+│   └── index.css
+├── index.html
+├── package.json
+├── vite.config.js
+├── eslint.config.js
+├── README.md
+├── package-lock.json
+└── pnpm-lock.yaml
 ```
+
+## Notes for contributors
+
+- The app is intentionally front-end focused; most updates happen in `src/components` and `src/App.jsx`.
+- Menu content is kept separate in the `Menu` module for easier maintenance.
+- Styling is handled primarily through Tailwind and component CSS.
+- For UI changes, prefer updating the section-level components rather than creating one-off inline styles.
+
+## License
+
+This project is open source and available under the MIT License.
